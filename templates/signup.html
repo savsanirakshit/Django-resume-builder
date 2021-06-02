@@ -52,14 +52,13 @@
                 <div class="logo-symbol">R</div>
                 <div class="logo-text">Rakshit <span>Savsani</span></div>
               </a>
-
             </div>
-
+            <!-- /Text Logo -->
 
             <!-- Navigation -->
             <div class="site-nav mobile-menu-hide">
               <ul class="leven-classic-menu site-main-menu">
-                 {% if user.is_authenticated %}
+                  {% if user.is_authenticated %}
                 <li class="menu-item">
                   <a href="index">About Me</a>
 
@@ -79,14 +78,11 @@
                 <li class="menu-item">
                   <a href="Contact">Contact</a>
                 </li>
-
                   <li class="menu-item" >
                   <a  class="btn btn-primary " href="logout">Log Out </a>
                 </li>
-
-
                   {% else %}
-                 <li class="menu-item">
+                  <li class="menu-item">
                   <a href="login">Log In</a>
                 </li>
                   <li class="menu-item">
@@ -94,10 +90,7 @@
                 </li>
                   {% endif %}
               </ul>
-
-
             </div>
-
 
             <!-- Mobile Menu Toggle -->
             <a class="menu-toggle mobile-visible">
@@ -106,22 +99,95 @@
             <!-- Mobile Menu Toggle -->
           </div>
         </header>
+
           {% if messages %}
 
                   <div class="alert alert-warning" role="alert" >
-                    <span class="closebtn" onclick="this.parentElement.style.display='none';">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                     {% for message in messages %}
                        <h5 style="color:blue">
                            {{message}}
                        </h5>
                        {% endfor %}
-                        &times;</span>
                   </div>
 
                 {% endif %}
-{% block content %}
-{% endblock %}
-<!-- Footer -->
+
+          <div class="row">
+
+                  <div class=" col-xs-12 col-sm-4 ">
+
+
+
+                  </div>
+
+
+                  <div class=" col-xs-12 col-sm-6 ">
+
+                    <div class="block-title">
+                      <h2>Hello...</h2><br>
+                        <h3>Get Started With Us...</h3><br>
+                    </div>
+
+                    <form class="contact-form" action="signup" method="post">
+                      {% csrf_token %}
+                      <div class="messages"></div>
+
+                      <div class="controls two-columns">
+                        <div class="fields clearfix">
+                          <div class="left-column">
+                              <div class="form-group form-group-with-icon">
+                              <input id="form_name" type="text" name="firstname" class="form-control" placeholder="First name" required="required" data-error="Name is required.">
+                              <div class="form-control-border"></div>
+                              <div class="help-block with-errors"></div>
+                            </div>
+
+                              <div class="form-group form-group-with-icon">
+                              <input id="form_name" type="text" name="lastname" class="form-control" placeholder="Last name" required="required" data-error="Name is required.">
+                              <div class="form-control-border"></div>
+                              <div class="help-block with-errors"></div>
+                            </div>
+
+                              <div class="form-group form-group-with-icon">
+                              <input id="form_name" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Name is required.">
+                              <div class="form-control-border"></div>
+                              <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group form-group-with-icon">
+                              <input id="form_name" type="text" name="username" class="form-control" placeholder="Username" required="required" data-error="Name is required.">
+                              <div class="form-control-border"></div>
+                              <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group form-group-with-icon">
+                              <input id="form_email" type="password" name="password" class="form-control" placeholder="Password" required="required" data-error="Valid email is required.">
+                              <div class="form-control-border"></div>
+                              <div class="help-block with-errors"></div>
+                            </div>
+
+                              <div class="form-group form-group-with-icon">
+                              <input id="form_email" type="password" name="cpassword" class="form-control" placeholder="Confirm Password" required="required" data-error="Valid email is required.">
+                              <div class="form-control-border"></div>
+                              <div class="help-block with-errors"></div>
+                            </div>
+
+
+                          </div>
+
+                        </div>
+
+
+
+                        <input type="submit" class="button btn-send " value="Sign up">
+                      </div>
+                    </form>
+
+                  </div>
+
+
+                </div>
+
         <footer class="site-footer clearfix">
           <div class="footer-social">
             <ul class="footer-social-links">
